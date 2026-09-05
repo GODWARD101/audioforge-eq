@@ -71,3 +71,27 @@ Section gaps `gap-8 md:gap-10`; control groups `gap-4`; knob-to-label `gap-2`; c
 ## Signature Detail
 
 The single signal-red gain knob — one red face among silver, reserved exclusively for Post/Out Gain — is the interface's memorable, safety-first signature.
+
+## Installable App Identity (PWA)
+
+Standalone installable PWA on Android (Chrome) and Windows (Edge/Chrome) with its own icon, name, theme color, and splash — reusing the existing dark-charcoal + signal-red language, no redesign.
+
+| Property         | Value                                                    | Source                              |
+| ---------------- | -------------------------------------------------------- | ----------------------------------- |
+| App name         | `AudioForge EQ`                                          | manifest `name` + `short_name`      |
+| Theme color      | `#121212` (`oklch(0.13 0.012 260)`)                      | manifest `theme_color`, meta        |
+| Background color | `#121212` (same charcoal base)                           | manifest `background_color`, splash |
+| Display          | `standalone` (no browser chrome)                         | manifest `display`                  |
+| Icon maskable    | full-bleed charcoal tile, knob mark centered, 80% safe   | manifest `icons` any + maskable     |
+
+### App Icon Mark
+
+Single brushed-metallic rotary EQ knob, flat-front on a deep charcoal tile — production asset `src/frontend/public/assets/generated/audioforge-icon.png`. Composition: one knob centered on a rounded-square charcoal tile; thin ring groove, vertical EQ band bar glyph, small signal-red indicator pointer near top edge. Palette: charcoal `0.13 0.012 260`, brushed silver `0.42..0.2 0.02 260` face, signal-red `0.55 0.2 25`. Type: no text on icon; "AudioForge EQ" wordmark in Space Grotesk on splash only. Sizes: 192, 512 (+ maskable 512), apple-touch-icon 180.
+
+### Splash Screen
+
+Full-bleed charcoal (`#121212`) with knob icon centered and "AudioForge EQ" wordmark in Space Grotesk beneath. Chromium derives from `background_color` + icon; Android uses generated splash assets.
+
+### Launch Motion
+
+Single subtle `splash-fade` entrance (opacity 0→1, 0.6s ease-out) on the installed app's first paint, reinforcing the standalone launch without decorative noise.

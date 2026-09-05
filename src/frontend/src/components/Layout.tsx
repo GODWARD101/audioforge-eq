@@ -1,3 +1,4 @@
+import { InstallPrompt } from "@/components/InstallPrompt";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 import { Link, Outlet } from "@tanstack/react-router";
@@ -62,8 +63,11 @@ export function Layout() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 md:hidden">
-            <MobileNav />
+          <div className="flex items-center gap-2">
+            <InstallPrompt />
+            <div className="flex items-center gap-2 md:hidden">
+              <MobileNav />
+            </div>
           </div>
         </div>
       </header>

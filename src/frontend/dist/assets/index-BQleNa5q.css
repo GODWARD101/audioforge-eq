@@ -3646,6 +3646,10 @@ video {
     display: flex;
   }
 
+  .sm\:inline-flex {
+    display: inline-flex;
+  }
+
   .sm\:max-w-lg {
     max-width: 32rem;
   }

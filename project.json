@@ -1,22 +1,18 @@
 {
-  "overview": "A full-featured web-based audio EQ and effects app with a 10/13/21-band equalizer, limiter, multiband compressor, spectrum analyzer, signal generator, presets, headphone profiles, and liquid glassmorphism theming.",
+  "overview": "AudioForge EQ is a web-based audio equalizer and effects rack that installs as a standalone app on Android and PC.",
   "features": [
-    "10/13/21-band equalizer with draggable curve",
-    "Limiter and multiband compressor effects",
-    "Real-time spectrum analyzer",
-    "Signal generator (sine, noise, sweep)",
-    "Factory and user presets",
-    "Headphone/speaker profiles",
-    "JSON export/import of settings",
-    "Multiple liquid glassmorphism color themes"
+    "Install as a standalone app on Android and Windows",
+    "Full offline support for the EQ and effects workflow",
+    "Parametric EQ with draggable curve and band controls",
+    "Effects rack with limiter, compressor, and tone modules",
+    "Presets and per-device profiles"
   ],
-  "category": "audio-tool",
+  "category": "tool",
   "tags": [
     "audio",
     "equalizer",
     "effects",
-    "dsp",
-    "tool"
+    "pwa"
   ],
-  "last_updated": "2026-09-05T11:47:17.621Z"
+  "last_updated": "2026-09-05T16:11:24.701Z"
 }

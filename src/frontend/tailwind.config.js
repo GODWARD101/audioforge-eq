@@ -104,12 +104,17 @@ export default {
           from: { opacity: "0", transform: "translateY(8px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "splash-fade": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "knob-glow": "knob-glow 2.4s ease-in-out infinite",
         "fade-up": "fade-up 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "splash-fade": "splash-fade 0.6s ease-out",
       },
     },
   },
