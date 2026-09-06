@@ -1,0 +1,5 @@
+{
+	"appId": "com.audioforge.eq",
+	"appName": "AudioForge EQ",
+	"webDir": "src/frontend/dist"
+}

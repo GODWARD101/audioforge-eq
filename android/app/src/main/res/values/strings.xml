@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AudioForge EQ</string>
+    <string name="title_activity_main">AudioForge EQ</string>
+    <string name="package_name">com.audioforge.eq</string>
+    <string name="custom_url_scheme">com.audioforge.eq</string>
+</resources>

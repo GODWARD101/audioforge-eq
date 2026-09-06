@@ -23,6 +23,26 @@
 
 - **generate bindings**: `pnpm bindgen` This step is necessary to ensure the frontend can call the backend methods.
 
+## Ionic Appflow (Android APK build)
+
+The Capacitor project lives at the **repository root** so Ionic Appflow can find it. The web app source stays in `src/frontend/` (the Caffeine platform requires it there); the root-level Capacitor project is the Appflow-facing one.
+
+- **Root `package.json`** carries the Capacitor dependencies (`@capacitor/cli`, `@capacitor/core`, `@capacitor/android`, all `^8.5.0`) and the `build:appflow` script.
+- **Root `capacitor.config.ts`** sets `appId: "com.audioforge.eq"`, `appName: "AudioForge EQ"`, and `webDir: "src/frontend/dist"` so Appflow knows where the built web assets live.
+- **`android/`** is the native Android project generated with `npx cap add android` from the repo root.
+- **`src/frontend/capacitor.config.ts`** is the local-development config (its `webDir` is `dist` relative to `src/frontend`) and is left unchanged.
+
+**Appflow build command** — configure Appflow to run this at the repo root:
+
+```sh
+pnpm install
+pnpm run build:appflow
+```
+
+`build:appflow` (a) builds the web app into `src/frontend/dist` via `pnpm --dir src/frontend build` and (b) runs `cap sync android` to copy the built web assets into the `android/` native project. After the sync, Appflow builds the Android APK from the `android/` project.
+
+**One-time setup**: if the `android/` native project is missing (e.g. a fresh clone), run `npx cap add android` once from the repo root before the first Appflow build. This requires the root Capacitor dependencies to be installed (`pnpm install`).
+
 ## Head Metadata (SEO and Link Previews)
 
 `src/frontend/index.html` ships with social-sharing meta tags (`description`, `og:title`, `og:description`, `og:type`, `og:image`, `og:image:alt`, `twitter:card`, `twitter:image`). Links shared to this app only render a preview card if these tags are present in the deployed `index.html`.

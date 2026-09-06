@@ -13,9 +13,13 @@
     "fix": "pnpm -r --if-present run fix",
     "test": "pnpm --dir src/frontend test && pnpm run test:backend",
     "test:backend": "node test/pocketic/run-backend-lane.mjs",
-    "bindgen": "caffeine-bindgen --did-file ./src/backend/dist/backend.did --out-dir ./src/frontend/src --actor-interface-file --force"
+    "bindgen": "caffeine-bindgen --did-file ./src/backend/dist/backend.did --out-dir ./src/frontend/src --actor-interface-file --force",
+    "build:appflow": "pnpm --dir src/frontend build && cap sync android"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
     "@dfinity/pic": "^0.23.0",
     "sharp": "^0.34.4"
   }
